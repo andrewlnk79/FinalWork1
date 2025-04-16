@@ -3,7 +3,7 @@ package main.java.com.skillbox.addressbook;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Getter
@@ -16,19 +16,19 @@ public class Contact {
     private String name;
     private String surname;
     private String patronymic;
-    private Date birthday;
+    private LocalDate birthday;
     private String email;
     private String phoneNumber;
     private String post;
 
-    public Contact(String name, String surname, String patronymic, Date birthday, String email, String phoneNumber, String post) {
+    public Contact(String name, String surname, String patronymic, LocalDate birthday, String email, String phoneNumber, String post) {
         this.name = name.toLowerCase();
         this.patronymic = patronymic.toLowerCase();
         this.surname = surname.toLowerCase();
         this.birthday = birthday;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.post = post;
+        this.post = post.toLowerCase();
         id = nextId++;
 
     }
@@ -47,7 +47,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Фамилия:" + surname + "\nИмя:" + name + "\nОтчество:" + patronymic + "\nИмя:" + name + "\nДата рождения:" + birthday + "\nemail:" + email +
+        return "Фамилия:" + surname.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nОтчество:" + patronymic.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nДата рождения:" + birthday + "\nemail:" + email +
                 "\nТелефон:" + phoneNumber + "\nДолжность:" + post;
     }
 

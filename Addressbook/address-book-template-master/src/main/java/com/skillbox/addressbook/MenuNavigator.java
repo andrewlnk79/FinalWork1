@@ -11,8 +11,7 @@ public class MenuNavigator {
     // Уверены, вам точно потребуется поле типа AddressBook.
 
     public void start() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println();
+        selectMainMenu();
         // Напишите тут ваш код для вывода основного меню и
         // ввода выбора пользователя.
         // Советуем для каждого пункта меню написать свой метод,
@@ -25,7 +24,7 @@ public class MenuNavigator {
     }
 
     private void removeContact() {
-
+        addressBook.deleteContactBySurname("петров");
         // Здесь будет код для удаления контакта
     }
 
@@ -38,9 +37,28 @@ public class MenuNavigator {
     }
 
     private int selectMainMenu() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Адресная книга\n");
+            System.out.println("1-Новый контакт\n" +
+                    "2-Удаление существующего контакта\n" +
+                    "3-Вывод всех контактов\n" + "4- Завершение работы");
+            System.out.println("Введите нужную опцию и нажмите Enter");
+            try {
+                inputNumber = scanner.nextInt();
+                if (inputNumber >= 1 && inputNumber <= 4) {
+                    break; // выход из цикла, если введено валидное значение
+                } else {
+                    System.out.println("Не верный ввод");
+                }
+            } catch (Exception e) {
+                System.out.println("Не верный ввод");
+                scanner.next();
+            }
+        }
         // Здесь будет код для вывода основного меню и получения выбора
         // пользователя.
         // Метод должен вернуть номер опции, выбранной пользователем
-        return 0;
+        return inputNumber;
     }
 }

@@ -1,9 +1,12 @@
 package main.java.com.skillbox.addressbook;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AddressBook {
+    Contact contact;
     private List<Contact> contacts;
 
     public AddressBook() {
@@ -41,11 +44,13 @@ public class AddressBook {
     }
 
     public void getAllContacts() {
-        System.out.println(contacts);
+        for (Contact c : contacts) {
+            System.out.println(c);
+        }
     }
 
 
-    public void deleteContactBySurname(Contact contact, String surname) {
+    public void deleteContactBySurname(String surname) {
         Contact contactToRemove = null;
         for (Contact с : contacts) {
             if (с.getSurname().equals(surname)) {
@@ -58,6 +63,28 @@ public class AddressBook {
 
         }
     }
+
+    Scanner scanner = new Scanner(System.in);
+
+    private void readFromConsole() {
+        System.out.println("Введите Имя");
+        contact.setName(scanner.next());
+        System.out.println("Введите Фамилию");
+        contact.setSurname(scanner.next());
+        System.out.println("Введите Отчество");
+        System.out.println("Введите Дату рождения");
+        contact.setBirthday(LocalDate.parse(scanner.next()));
+        contact.setPatronymic(scanner.next());
+        System.out.println("Введите Должность");
+        contact.setPost(scanner.next());
+        System.out.println("Введите номер телефона");
+        contact.setPhoneNumber(scanner.next());
+        System.out.println("Введите адрес электронной почты");
+        contact.setEmail(scanner.next());
+
+
+    }
+
     // Здесь будут храниться контакты.
     // Вам надо придумать, каким образом эти контакты будут храниться
     // в адресной книге.
