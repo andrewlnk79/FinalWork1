@@ -6,6 +6,7 @@ public class MenuNavigator {
     AddressBook addressBook = new AddressBook();
     Contact contact;
     private int inputNumber;
+    Scanner scanner = new Scanner(System.in);
 
     // Определите тут необходимые поля.
     // Уверены, вам точно потребуется поле типа AddressBook.
@@ -41,7 +42,6 @@ public class MenuNavigator {
     }
 
     private int selectMainMenu() {
-        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Адресная книга\n");
             System.out.println("1-Новый контакт\n" +
@@ -61,10 +61,7 @@ public class MenuNavigator {
             }
 
         }
-        // Здесь будет код для вывода основного меню и получения выбора
-        // пользователя.
-        // Метод должен вернуть номер опции, выбранной пользователем
-        scanner.close();
+        
         return inputNumber;
     }
 }

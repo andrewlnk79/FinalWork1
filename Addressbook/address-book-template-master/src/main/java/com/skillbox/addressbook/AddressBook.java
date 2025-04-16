@@ -1,6 +1,5 @@
 package main.java.com.skillbox.addressbook;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +16,7 @@ public class AddressBook {
         Contact contact = new Contact();
         contact = readContactFromConsole(contact);
         if (contacts.isEmpty()) {
-            System.out.println("В книге контактов нет записей");
+            System.out.println("В книге контактов нет записей Добавим новую");
             contacts.add(contact);
         } else {
 
@@ -74,26 +73,19 @@ public class AddressBook {
         System.out.println("Введите Фамилию");
         contact.setSurname(scanner.next());
         System.out.println("Введите Отчество");
-        System.out.println("Введите Дату рождения");
-        contact.setBirthday(LocalDate.parse(scanner.next()));
         contact.setPatronymic(scanner.next());
+        System.out.println("Введите Дату рождения");
+        contact.setBirthday(scanner.next());
         System.out.println("Введите Должность");
         contact.setPost(scanner.next());
         System.out.println("Введите номер телефона");
         contact.setPhoneNumber(scanner.next());
         System.out.println("Введите адрес электронной почты");
         contact.setEmail(scanner.next());
-        scanner.close();
         return contact;
 
 
     }
 
-    // Здесь будут храниться контакты.
-    // Вам надо придумать, каким образом эти контакты будут храниться
-    // в адресной книге.
-    // Здесь вам необходимо реализовать методы для добавления, удаления
-    // и получения контактов.
-    // Рекомендуем также переопределить метод toString(), чтобы он вернул
-    // список контактов.
+
 }

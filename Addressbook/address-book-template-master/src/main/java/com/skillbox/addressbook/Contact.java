@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 @Getter
@@ -18,12 +17,12 @@ public class Contact {
     private String name;
     private String surname;
     private String patronymic;
-    private LocalDate birthday;
+    private String birthday;
     private String email;
     private String phoneNumber;
     private String post;
 
-    public Contact(String name, String surname, String patronymic, LocalDate birthday, String email, String phoneNumber, String post) {
+    public Contact(String name, String surname, String patronymic, String birthday, String email, String phoneNumber, String post) {
         this.name = name.toLowerCase();
         this.patronymic = patronymic.toLowerCase();
         this.surname = surname.toLowerCase();
@@ -54,10 +53,4 @@ public class Contact {
     }
 
 }
-
-
-// Опишите тут необходимые поля и методы доступа к этим полям.
-// Переопределите конструктор по умолчанию, методы hashCode() и equals()
-// Будет удобно, если вы также переопределите метод toString() для
-// вывода информации о контакте
 
