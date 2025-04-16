@@ -37,6 +37,7 @@ public class MenuNavigator {
     }
 
     private void exit() {
+        System.out.println("Работа программы завершена, ждём вас снова!");
         System.exit(0);
 
     }
@@ -61,7 +62,7 @@ public class MenuNavigator {
             }
 
         }
-        
+
         return inputNumber;
     }
 }

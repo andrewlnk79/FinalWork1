@@ -18,11 +18,15 @@ public class AddressBook {
         if (contacts.isEmpty()) {
             System.out.println("В книге контактов нет записей Добавим новую");
             contacts.add(contact);
+            if (contacts.contains(contact)) {
+                System.out.println("Контакт добавлен");
+            }
         } else {
 
             for (Contact c : contacts) {
                 if (c.getSurname().equals(contact.getSurname()) && c.getName().equals(contact.getName())) {
-                    System.out.println("Такой контакт существует и будет перезаписан!");
+                    System.out.println("Пользователь" + contact.getName() + " " + contact.getPatronymic() + " " + contact.getSurname() + "уже присутствует в списке\n" +
+                            "контактов, он будет обновлён в соответствии с новыми данными.");
                     contacts.set(contacts.indexOf(c), contact);
                     return;
                 } else contacts.add(contact);
