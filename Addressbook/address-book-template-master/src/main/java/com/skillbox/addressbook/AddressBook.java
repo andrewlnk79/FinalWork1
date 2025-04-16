@@ -10,7 +10,7 @@ public class AddressBook {
         contacts = new ArrayList<Contact>();
     }
 
-    private void addContact(Contact contact) {
+    public void addContact(Contact contact) {
         if (contacts.isEmpty()) {
             System.out.println("В книге контактов нет записей");
             contacts.add(contact);
@@ -30,7 +30,7 @@ public class AddressBook {
 
     }
 
-    private void getContact(Contact contact, String surname) {
+    public void getContact(Contact contact, String surname) {
         for (Contact с : contacts) {
             if (с.getSurname().equals(surname)) {
                 System.out.println(с);
@@ -40,8 +40,12 @@ public class AddressBook {
 
     }
 
+    public void getAllContacts() {
+        System.out.println(contacts);
+    }
 
-    private void deleteContactBySurname(Contact contact, String surname) {
+
+    public void deleteContactBySurname(Contact contact, String surname) {
         Contact contactToRemove = null;
         for (Contact с : contacts) {
             if (с.getSurname().equals(surname)) {

@@ -15,20 +15,22 @@ public class Contact {
     private int nextId = 1;
     private String name;
     private String surname;
+    private String patronymic;
     private Date birthday;
     private String email;
     private String phoneNumber;
     private String post;
 
-    public Contact(String name, String surname, Date birthday, String email, String phoneNumber, String post) {
+    public Contact(String name, String surname, String patronymic, Date birthday, String email, String phoneNumber, String post) {
         this.name = name.toLowerCase();
+        this.patronymic = patronymic.toLowerCase();
         this.surname = surname.toLowerCase();
         this.birthday = birthday;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.post = post;
-        id = nextId;
-        nextId++;
+        id = nextId++;
+
     }
 
     @Override
@@ -45,7 +47,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Имя:" + name + "\nФамилия:" + surname + "\nДата рождения:" + birthday + "\nemail:" + email +
+        return "Фамилия:" + surname + "\nИмя:" + name + "\nОтчество:" + patronymic + "\nИмя:" + name + "\nДата рождения:" + birthday + "\nemail:" + email +
                 "\nТелефон:" + phoneNumber + "\nДолжность:" + post;
     }
 

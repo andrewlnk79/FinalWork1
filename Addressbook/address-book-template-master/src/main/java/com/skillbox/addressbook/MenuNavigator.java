@@ -1,11 +1,18 @@
 package main.java.com.skillbox.addressbook;
 
+import java.util.Scanner;
+
 public class MenuNavigator {
+    AddressBook addressBook = new AddressBook();
+    Contact contact;
+    private int inputNumber;
 
     // Определите тут необходимые поля.
     // Уверены, вам точно потребуется поле типа AddressBook.
 
     public void start() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
         // Напишите тут ваш код для вывода основного меню и
         // ввода выбора пользователя.
         // Советуем для каждого пункта меню написать свой метод,
@@ -13,10 +20,12 @@ public class MenuNavigator {
     }
 
     private void printContacts() {
+        addressBook.getAllContacts();
         // Здесь будет код для вывода списка контактов
     }
 
     private void removeContact() {
+
         // Здесь будет код для удаления контакта
     }
 
