@@ -13,7 +13,9 @@ public class AddressBook {
         contacts = new ArrayList<Contact>();
     }
 
-    public void addContact(Contact contact) {
+    public void addContact() {
+        Contact contact = new Contact();
+        contact = readContactFromConsole(contact);
         if (contacts.isEmpty()) {
             System.out.println("В книге контактов нет записей");
             contacts.add(contact);
@@ -64,9 +66,9 @@ public class AddressBook {
         }
     }
 
-    Scanner scanner = new Scanner(System.in);
 
-    private void readFromConsole() {
+    public Contact readContactFromConsole(Contact contact) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите Имя");
         contact.setName(scanner.next());
         System.out.println("Введите Фамилию");
@@ -81,6 +83,8 @@ public class AddressBook {
         contact.setPhoneNumber(scanner.next());
         System.out.println("Введите адрес электронной почты");
         contact.setEmail(scanner.next());
+        scanner.close();
+        return contact;
 
 
     }
