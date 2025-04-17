@@ -8,8 +8,6 @@ public class MenuNavigator {
     private int inputNumber;
     Scanner scanner = new Scanner(System.in);
 
-    // Определите тут необходимые поля.
-    // Уверены, вам точно потребуется поле типа AddressBook.
 
     public void start() {
         switch (selectMainMenu()) {
@@ -24,19 +22,19 @@ public class MenuNavigator {
 
     private void printContacts() {
         addressBook.getAllContacts();
-        // Здесь будет код для вывода списка контактов
+
     }
 
     private void removeContact() {
-        System.out.println("Веедите фамилию, удаляемого контакта");
+        System.out.println("Введите фамилию, удаляемого контакта");
         String surname = scanner.next();
         addressBook.deleteContactBySurname(surname);
-        // Здесь будет код для удаления контакта
+
     }
 
     private void newContact() {
         addressBook.addContact();
-        // Здесь будет код для добавления нового контакта
+
     }
 
     private void exit() {
