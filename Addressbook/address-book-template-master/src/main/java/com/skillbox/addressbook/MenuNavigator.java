@@ -28,7 +28,9 @@ public class MenuNavigator {
     }
 
     private void removeContact() {
-        addressBook.deleteContactBySurname("петров");
+        System.out.println("Веедите фамилию, удаляемого контакта");
+        String surname = scanner.next();
+        addressBook.deleteContactBySurname(surname);
         // Здесь будет код для удаления контакта
     }
 
