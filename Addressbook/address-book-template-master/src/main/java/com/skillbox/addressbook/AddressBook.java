@@ -49,6 +49,9 @@ public class AddressBook {
     }
 
     public void getAllContacts() {
+        if (contacts.isEmpty()) {
+            System.out.println("В книге контактов нет записей");
+        }
         for (Contact c : contacts) {
             System.out.println(c);
         }
@@ -73,19 +76,19 @@ public class AddressBook {
     public Contact readContactFromConsole(Contact contact) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите Имя");
-        contact.setName(scanner.next());
+        contact.setName(scanner.nextLine());
         System.out.println("Введите Фамилию");
-        contact.setSurname(scanner.next());
+        contact.setSurname(scanner.nextLine());
         System.out.println("Введите Отчество");
-        contact.setPatronymic(scanner.next());
+        contact.setPatronymic(scanner.nextLine());
         System.out.println("Введите Дату рождения");
-        contact.setBirthday(scanner.next());
+        contact.setBirthday(scanner.nextLine());
         System.out.println("Введите Должность");
-        contact.setPost(scanner.next());
+        contact.setPost(scanner.nextLine());
         System.out.println("Введите номер телефона");
-        contact.setPhoneNumber(scanner.next());
+        contact.setPhoneNumber(scanner.nextLine());
         System.out.println("Введите адрес электронной почты");
-        contact.setEmail(scanner.next());
+        contact.setEmail(scanner.nextLine());
         return contact;
 
 

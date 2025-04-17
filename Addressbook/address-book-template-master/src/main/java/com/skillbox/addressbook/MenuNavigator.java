@@ -21,6 +21,7 @@ public class MenuNavigator {
     }
 
     private void printContacts() {
+
         addressBook.getAllContacts();
 
     }
