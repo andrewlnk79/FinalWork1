@@ -18,6 +18,7 @@ public class MenuNavigator {
             case (3) -> printContacts();
             case (4) -> exit();
         }
+        start();
 
     }
 

@@ -48,7 +48,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Фамилия:" + surname.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nОтчество:" + patronymic.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nДата рождения:" + birthday + "\nemail:" + email +
+        return "ID:" + id + "\nФамилия:" + surname.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nОтчество:" + patronymic.toUpperCase() + "\nИмя:" + name.toUpperCase() + "\nДата рождения:" + birthday + "\nemail:" + email +
                 "\nТелефон:" + phoneNumber + "\nДолжность:" + post;
     }
 
