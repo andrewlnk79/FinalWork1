@@ -8,18 +8,15 @@ public class MenuNavigator {
     private int inputNumber;
     Scanner scanner = new Scanner(System.in);
 
-
     public void start() {
-        switch (selectMainMenu()) {
-            case (1) -> newContact();
-            case (2) -> removeContact();
-            case (3) -> printContacts();
-            case (4) -> exit();
+        while (true) {
+            switch (selectMainMenu()) {
+                case (1) -> newContact();
+                case (2) -> removeContact();
+                case (3) -> printContacts();
+                case (4) -> exit();
+            }
         }
-
-        start();
-
-
     }
 
 

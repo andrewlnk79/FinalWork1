@@ -7,9 +7,11 @@ import java.util.Scanner;
 public class AddressBook {
     Contact contact;
     private List<Contact> contacts;
+    Scanner scanner = new Scanner(System.in);
 
     public AddressBook() {
         contacts = new ArrayList<Contact>();
+
     }
 
     public void addContact() {
@@ -74,13 +76,16 @@ public class AddressBook {
 
 
     public Contact readContactFromConsole(Contact contact) {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Введите Имя");
         contact.setName(scanner.nextLine());
         System.out.println("Введите Фамилию");
         contact.setSurname(scanner.nextLine());
         System.out.println("Введите Отчество");
         contact.setPatronymic(scanner.nextLine());
+        if (contact.getPatronymic().isEmpty()) {
+            contact.setPatronymic("Нет отчества");
+        }
         System.out.println("Введите Дату рождения");
         contact.setBirthday(scanner.nextLine());
         System.out.println("Введите Должность");
@@ -89,7 +94,7 @@ public class AddressBook {
         contact.setPhoneNumber(scanner.nextLine());
         System.out.println("Введите адрес электронной почты");
         contact.setEmail(scanner.nextLine());
-        scanner.close();
+
         return contact;
 
 

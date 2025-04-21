@@ -25,6 +25,8 @@ public class Contact {
     public Contact(String name, String surname, String patronymic, String birthday, String email, String phoneNumber, String post) {
         this.name = name.toLowerCase();
         this.patronymic = patronymic.toLowerCase();
+
+
         this.surname = surname.toLowerCase();
         this.birthday = birthday;
         this.email = email;
