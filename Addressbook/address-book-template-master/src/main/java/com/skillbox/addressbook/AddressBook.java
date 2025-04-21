@@ -89,6 +89,7 @@ public class AddressBook {
         contact.setPhoneNumber(scanner.nextLine());
         System.out.println("Введите адрес электронной почты");
         contact.setEmail(scanner.nextLine());
+        scanner.close();
         return contact;
 
 

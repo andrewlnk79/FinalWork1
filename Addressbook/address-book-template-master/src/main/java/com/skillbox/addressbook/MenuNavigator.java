@@ -16,9 +16,12 @@ public class MenuNavigator {
             case (3) -> printContacts();
             case (4) -> exit();
         }
+
         start();
 
+
     }
+
 
     private void printContacts() {
 
@@ -60,7 +63,7 @@ public class MenuNavigator {
                 }
             } catch (Exception e) {
                 System.out.println("Не верная опция, попробуй еще раз");
-                scanner.next();
+                scanner.nextLine();
             }
 
         }
