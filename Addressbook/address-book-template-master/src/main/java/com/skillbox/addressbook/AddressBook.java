@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class AddressBook {
     Contact contact;
     private List<Contact> contacts;
-    Scanner scanner;
+    Scanner scanner = new Scanner(System.in);
 
     public AddressBook() {
         contacts = new ArrayList<Contact>();
@@ -87,7 +87,7 @@ public class AddressBook {
         if (contact.getPatronymic().isEmpty()) {
             contact.setPatronymic("Нет отчества");
         }
-        System.out.println("Введите Дату рождения");
+        System.out.println("Введите Дату рождения формата yyy-MM-dd");
         contact.setBirthday(LocalDate.parse(scanner.nextLine()));
         System.out.println("Введите Должность");
         contact.setPost(scanner.nextLine());
