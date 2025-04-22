@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Getter
@@ -17,12 +18,12 @@ public class Contact {
     private String name;
     private String surname;
     private String patronymic;
-    private String birthday;
+    private LocalDate birthday;
     private String email;
     private String phoneNumber;
     private String post;
 
-    public Contact(String name, String surname, String patronymic, String birthday, String email, String phoneNumber, String post) {
+    public Contact(String name, String surname, String patronymic, LocalDate birthday, String email, String phoneNumber, String post) {
         this.name = name.toLowerCase();
         this.patronymic = patronymic.toLowerCase();
 

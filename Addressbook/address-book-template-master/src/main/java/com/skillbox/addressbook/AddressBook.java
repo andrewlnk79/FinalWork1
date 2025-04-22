@@ -1,5 +1,6 @@
 package main.java.com.skillbox.addressbook;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 public class AddressBook {
     Contact contact;
     private List<Contact> contacts;
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
 
     public AddressBook() {
         contacts = new ArrayList<Contact>();
@@ -87,7 +88,7 @@ public class AddressBook {
             contact.setPatronymic("Нет отчества");
         }
         System.out.println("Введите Дату рождения");
-        contact.setBirthday(scanner.nextLine());
+        contact.setBirthday(LocalDate.parse(scanner.nextLine()));
         System.out.println("Введите Должность");
         contact.setPost(scanner.nextLine());
         System.out.println("Введите номер телефона");

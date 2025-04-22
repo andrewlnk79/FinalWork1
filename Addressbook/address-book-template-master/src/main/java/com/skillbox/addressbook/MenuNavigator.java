@@ -6,9 +6,10 @@ public class MenuNavigator {
     AddressBook addressBook = new AddressBook();
     Contact contact;
     private int inputNumber;
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
 
     public void start() {
+        scanner = new Scanner(System.in);
         while (true) {
             switch (selectMainMenu()) {
                 case (1) -> newContact();
@@ -17,6 +18,7 @@ public class MenuNavigator {
                 case (4) -> exit();
             }
         }
+
     }
 
 
@@ -40,6 +42,7 @@ public class MenuNavigator {
 
     private void exit() {
         System.out.println("Работа программы завершена, ждём вас снова!");
+        scanner.close();
         System.exit(0);
 
     }
