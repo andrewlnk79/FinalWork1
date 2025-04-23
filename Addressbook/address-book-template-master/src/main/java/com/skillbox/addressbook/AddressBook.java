@@ -75,6 +75,9 @@ public class AddressBook {
             String answer = scanner.nextLine();
             if (answer.equals("y")) {
                 contacts.remove(contactToRemove);
+                if (contactToRemove == null) {
+                    System.out.println("Контакт удалён");
+                }
             }
         }
     }
