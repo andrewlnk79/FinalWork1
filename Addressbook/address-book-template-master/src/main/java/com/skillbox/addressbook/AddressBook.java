@@ -66,11 +66,11 @@ public class AddressBook {
         for (Contact с : contacts) {
             if (с.getSurname().equals(surname)) {
                 contactToRemove = с;
-                System.out.println(contactToRemove);
                 break;
             }
         }
         if (contactToRemove != null) {
+            System.out.println("К удалению!!!\n".toUpperCase() + contactToRemove);
             System.out.println("Удаляем контакт?y/n");
             String answer = scanner.nextLine();
             if (answer.equals("y")) {
@@ -94,7 +94,7 @@ public class AddressBook {
         if (contact.getPatronymic().isEmpty()) {
             contact.setPatronymic("Нет отчества");
         }
-        System.out.println("Введите Дату рождения формата yyy-MM-dd");
+        System.out.println("Введите Дату рождения формата yyyy-MM-dd");
         contact.setBirthday(LocalDate.parse(scanner.nextLine()));
         System.out.println("Введите Должность");
         contact.setPost(scanner.nextLine());
