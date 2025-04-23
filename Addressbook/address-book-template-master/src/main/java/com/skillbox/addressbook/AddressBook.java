@@ -70,7 +70,7 @@ public class AddressBook {
             }
         }
         if (contactToRemove != null) {
-            System.out.println("К удалению!!!\n".toUpperCase() + contactToRemove);
+            System.out.println(("\u001B К удалению!!! \u001B[0m").toUpperCase() + System.lineSeparator() + contactToRemove);
             System.out.println("Удаляем контакт?y/n");
             String answer = scanner.nextLine();
             if (answer.equals("y")) {
@@ -95,7 +95,12 @@ public class AddressBook {
             contact.setPatronymic("Нет отчества");
         }
         System.out.println("Введите Дату рождения формата yyyy-MM-dd");
-        contact.setBirthday(LocalDate.parse(scanner.nextLine()));
+        try {
+            contact.setBirthday(LocalDate.parse(scanner.nextLine()));
+        } catch (Exception e) {
+            System.out.println("\u001B[31mДата рождения в формате yyyy-MM-dd\u001B[0m");
+            contact.setBirthday(LocalDate.parse(scanner.nextLine()));
+        }
         System.out.println("Введите Должность");
         contact.setPost(scanner.nextLine());
         System.out.println("Введите номер телефона");
