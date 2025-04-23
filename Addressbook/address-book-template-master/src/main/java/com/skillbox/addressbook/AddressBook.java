@@ -66,12 +66,16 @@ public class AddressBook {
         for (Contact с : contacts) {
             if (с.getSurname().equals(surname)) {
                 contactToRemove = с;
+                System.out.println(contactToRemove);
                 break;
             }
         }
         if (contactToRemove != null) {
-            contacts.remove(contactToRemove);
-
+            System.out.println("Удаляем контакт?y/n");
+            String answer = scanner.nextLine();
+            if (answer.equals("y")) {
+                contacts.remove(contactToRemove);
+            }
         }
     }
 
